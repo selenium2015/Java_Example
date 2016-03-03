@@ -1,0 +1,24 @@
+方法：
+	重载Overloading
+	方法覆盖Overriding
+	
+	汉诺塔算法
+	斐波那契数列
+	阶乘
+	
+	输出数组元素
+	标签(Label)
+	
+	instanceOf 关键字用法
+	break 关键字用法
+	continue 关键字用法
+	
+	Enum（枚举）构造函数及方法的使用
+	enum 和 switch 语句使用
+	
+	for 和 foreach循环使用	
+	Varargs 可变参数使用
+	
+	
+	
+http://www.runoob.com/java/java-methods.html

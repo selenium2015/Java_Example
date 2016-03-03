@@ -1,0 +1,65 @@
+线程：
+(比较复杂，难理解，需多看)
+
+线程的几个主要概念: 
+	线程同步
+	线程间通信
+	线程死锁
+	线程控制：挂起、停止和恢复
+
+生命周期
+5种状态：新建New、就绪Runnable、运行Running、阻塞Blocked、死亡Dead
+	新建：new 、Thread类及子类
+	就绪: start()
+	运行: run()  （获取CPU资源）
+	阻塞：让出CPU资源、wait()、join（）、sleep()、同步锁、notify()、suspend()
+	死亡：run()结束、stop()、异常退出、
+	
+
+优先级PRIORITY：
+	每一个线程都有，有助于操作系统确定线程的调度顺序。
+	优先级是一个整数，其取值范围是1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。
+	默认情况下，每一个线程都会分配一个优先级NORM_PRIORITY（5）。 
+		
+	
+创建线程:(两种)
+	通过实现Runable接口
+	通过继承Thread类本身
+	
+
+ 通过实现Runnable接口来创建线程(最简单的方法)
+ 	为了实现Runnable，一个类只需要执行一个方法调用run()
+ 	可以重写该方法，重要的是理解的run()可以调用其他方法，使用其他类，并声明变量，就像主线程一样。
+ 	在创建一个实现Runnable接口的类之后，你可以在类中实例化一个线程对象。
+ 	经常使用的Thread构造方法：
+ 		Thread(Runnable threadOb,String threadName);
+	
+	threadOb 是一个实现Runnable 接口的类的实例，并且 threadName指定新线程的名字。
+	新线程创建之后，你调用它的start()方法它才会运行。
+	
+
+ 通过继承Thread来创建线程
+ 	 创建一个线程的第二种方法是创建一个新的类，该类继承Thread类，然后创建一个该类的实例。
+ 	  继承类必须重写run()方法，该方法是新线程的入口点。它也必须调用start()方法才能执行。
+ 	
+  		 
+		
+ Thread 方法
+ 	start()
+ 	run()
+ 	setName(String name)
+ 	setPriority(int priority)
+ 	setDaemon(boolean on)
+ 	join(long millisec)
+ 	interrupt()
+ 	isAlive() 
+ 	上述方法是被Thread对象调用的。
+ 	
+ 	下面的方法是Thread类的静态方法。 
+ 	 yield()
+ 	 sleep(long millisec)
+ 	 holdsLock(Object x)
+ 	 currentThread()
+ 	 dumpStack()
+	
+http://www.runoob.com/java/java-multithreading.html	

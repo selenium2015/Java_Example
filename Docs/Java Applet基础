@@ -1,0 +1,92 @@
+Java Applet基础 
+ applet是一种Java程序。它一般运行在支持Java的Web浏览器内。因为它有完整的Java API支持,所以applet是一个全功能的Java应用程序。
+ 
+ 独立的Java应用程序和applet程序之间重要的不同： 
+    Java中applet类继承了 java.applet.Applet类
+    Applet类没有定义main()，所以一个 Applet程序不会调用main()方法，
+    Applets被设计为嵌入在一个HTML页面。
+        当用户浏览包含Applet的HTML页面，Applet的代码就被下载到用户的机器上。
+        要查看一个applet需要JVM。 JVM可以是Web浏览器的一个插件，或一个独立的运行时环境。
+        用户机器上的JVM创建一个applet类的实例，并调用Applet生命周期过程中的各种方法。
+    Applets有Web浏览器强制执行的严格的安全规则，applet的安全机制被称为沙箱安全。
+    applet需要的其他类可以用Java归档（JAR）文件的形式下载下来。
+    
+
+ Applet的生命周期 
+  Applet类中的四个方法给你提供了一个框架，你可以再该框架上开发小程序：
+    init: 该方法的目的是为你的applet提供所需的任何初始化。在Applet标记内的param标签被处理后调用该方法。
+    start: 浏览器调用init方法后，该方法被自动调用。每当用户从其他页面返回到包含Applet的页面时，则调用该方法。
+    stop:当用户从包含applet的页面移除的时候，该方法自动被调用。因此，可以在相同的applet中反复调用该方法。
+    destroy: 此方法仅当浏览器正常关闭时调用。因为applets只有在HTML网页上有效，所以你不应该在用户离开包含Applet的页面后遗漏任何资源.
+    paint: 该方法在start()方法之后立即被调用，或者在applet需要重绘在浏览器的时候调用。paint()方法实际上继承于java.awt。    
+    
+ Applet 类
+  每一个applet都是java.applet.Applet 类的子类，基础的Applet类提供了供衍生类调用的方法,以此来得到浏览器上下文的信息和服务。
+这些方法做了如下事情：
+    得到applet的参数
+    得到包含applet的HTML文件的网络位置
+    得到applet类目录的网络位置
+    打印浏览器的状态信息
+    获取一张图片
+    获取一个音频片段
+    播放一个音频片段
+    调整此 applet 的大小
+
+除此之外，Applet类还提供了一个接口，该接口供Viewer或浏览器来获取applet的信息，并且来控制applet的执行。
+
+Viewer可能是：
+    请求applet作者、版本和版权的信息
+    请求applet识别的参数的描述
+    初始化applet
+    销毁applet
+    开始执行applet
+    结束执行applet
+
+Applet类提供了对这些方法的默认实现，这些方法可以在需要的时候重写。
+"Hello，World"applet都是按标准编写的。唯一被重写的方法是paint方法。
+ 
+ 
+Applet的调用
+ applet是一种Java程序。它一般运行在支持Java的Web浏览器内。因为它有完整的Java API支持,所以applet是一个全功能的Java应用程序。 
+   <applet>标签是在HTML文件中嵌入applet的基础。
+
+<html>
+<title>The Hello, World Applet</title>
+<hr>
+<applet code="HelloWorldApplet.class" width="320" height="120">
+If your browser was Java-enabled, a "Hello, World"
+message would appear here.
+</applet>
+<hr>
+</html>
+
+ 注意: 你可以参照HTML Applet标签来更多的了解从HTML中调用applet的方法。
+<applet>标签的属性指定了要运行的Applet类。Width和height用来指定applet运行面板的初始大小。applet必须使用</applet>标签来关闭。
+如果applet接受参数，那么参数的值需要在标签里添加，该标签位于<applet>和</applet>之间。浏览器忽略了applet标签之间的文本和其他标签。
+不支持Java的浏览器不能执行<applet>和</applet>。因此，在标签之间显示并且和applet没有关系的任何东西，在不支持的Java的浏览器里是可见的。
+Viewer或者浏览器在文档的位置寻找编译过的Java代码，要指定文档的路径，得使用<applet>标签的codebase属性指定。   
+<applet codebase="http://amrood.com/applets"
+code="HelloWorldApplet.class" width="320" height="120">
+
+ 如果applet所在一个包中而不是默认包，那么所在的包必须在code属性里指定，例如： 
+ <applet code="mypackage.subpackage.TestApplet.class"
+           width="320" height="120">   
+   
+    
+  
+获得applet参数  
+
+ 指定applet参数
+ 
+ 
+应用程序转换成Applet 
+
+
+ 事件处理
+ 
+ 
+ 显示图片
+ 
+ 
+ 播放音频 
+ 

@@ -1,0 +1,17 @@
+数据结构：
+	枚举（Enumeration）//
+	位集合（BitSet）
+	向量（Vector）//
+	栈（Stack）//
+	字典（Dictionary）
+	哈希表（Hashtable）//
+	属性（Properties）
+	链表（LinkedList）//
+	
+链表：获取元素、删除元素、查找元素、修改、开头/结尾添加元素
+栈：实现
+向量：获取索引值、最大元素、旋转
+队列：用法
+	
+	
+http://www.runoob.com/java/java-data-structures.html

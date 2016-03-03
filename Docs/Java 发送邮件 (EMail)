@@ -1,0 +1,52 @@
+Java 发送邮件 (EMail)
+
+使用Java应用程序发送E-mail十分简单，但是首先你应该在你的机器上安装JavaMail API 和Java Activation Framework (JAF) 。
+
+ 下载最新的版本。
+ JavaMail 
+ http://www.oracle.com/technetwork/java/index-138643.html
+ JAF (JavaBeans Activation Framework)
+ http://www.oracle.com/technetwork/java/jaf11-139815.html
+ 
+ 下载并解压这些文件，最上层文件夹你会发现很多的jar文件。你需要将mail.jar和activation.jar 添加到你的CLASSPATH中。(lib包即可)
+ 
+  如果你想发送一封e-mail给多个收件人，那么使用下面的方法来指定多个收件人ID： 
+  void addRecipients(Message.RecipientType type,Address[] addresses)throws MessagingException
+  
+  对于参数的描述
+    type:要被设置为TO, CC 或者BCC. 这里CC 代表抄送、BCC 代表秘密抄送y. 举例：Message.RecipientType.TO
+    addresses: 这是email ID的数组。在指定电子邮件ID时，你将需要使用InternetAddress()方法。
+    
+
+
+ 用户认证部分
+  如果需要提供用户名和密码给e-mail服务器来达到用户认证的目的，你可以通过如下设置来完成： 
+ props.put("mail.smtp.auth", "true");
+ props.setProperty("mail.user", "myuser");
+ props.setProperty("mail.password", "mypwd");
+     
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

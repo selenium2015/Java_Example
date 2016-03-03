@@ -1,0 +1,6 @@
+时间处理：
+	时间获取（当前时间、年、月、日、周、第几天等）
+	格式化时间
+	时间戳转换成时间
+	
+	http://www.runoob.com/java/java-date-time.html

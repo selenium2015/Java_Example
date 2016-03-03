@@ -1,0 +1,64 @@
+
+一、JDK下载
+	官网下载即可，注意版本问题，需要根据实际情况下载对应版本。
+	
+二、环境变量配置
+1、Windows下
+1）安装完JDK后，右击"我的电脑"，点击"属性"；
+2）选择"高级"选项卡，点击"环境变量"；
+3）新建“用户变量”：
+	变量名：JAVA_HOME，
+	变量值：{java_home}\jdk1.7.0_80\
+	
+	PS:{java_home}是指JDK的安装路径，即变量值是JDK的安装文件夹完整路径。
+4）修改PATH
+	变量值加入： %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码）
+
+5）修改CLASSPATH
+	变量值加入： .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（注意最前面有一点）
+
+6）验证	
+	运行cmd 输入 java -version
+	若显示版本信息 则说明安装和配置成功。
+
+
+2、Linux下	
+1）安装JDK
+	解压：tar -zxvf jdk-8u66-linux-i586.tar.gz
+2)配置环境变量
+ vi /etc/profile
+ （也可配置在 ：.bashrc  ）
+在尾部加入：
+JAVA_HOME=/usr/share/jdk1.5.0_05
+PATH=$JAVA_HOME/bin:$PATH
+CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export JAVA_HOME
+export PATH
+export CLASSPATH
+（JAVA_HOME需根据实际情况路径）
+
+使配置文件生效：
+	source /etc/profile
+	
+3）验证
+	java -version
+	
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
